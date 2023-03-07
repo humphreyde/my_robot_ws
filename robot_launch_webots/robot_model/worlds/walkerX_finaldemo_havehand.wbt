@@ -1,0 +1,64 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  title "WAIC"
+  ERP 0.8
+  basicTimeStep 1
+  FPS 20
+  coordinateSystem "NUE"
+  contactProperties [
+    ContactProperties {
+      material1 "Walker2 foot material"
+      coulombFriction [
+        0.5
+      ]
+      bounce 0.3
+      bounceVelocity 0.003
+      softERP 0.42
+      softCFM 0.000208
+    }
+    ContactProperties {
+      material1 "Walker2 hand material"
+      coulombFriction [
+        0.5
+      ]
+      bounce 0.3
+      bounceVelocity 0.003
+      softERP 0.42
+      softCFM 0.000208
+    }
+    ContactProperties {
+      material1 "Walker2 body material"
+      coulombFriction [
+        0.3
+      ]
+      bounceVelocity 0.003
+      softERP 0.8
+      softCFM 1e-05
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.09996121980645871 -0.9815147617432685 -0.16320700663531545 4.224135661953909
+  position 2.816356924567187 2.076399574580513 -1.746519674406301
+}
+TexturedBackground {
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.8 -1 -0.55
+  intensity 2.7
+}
+Floor {
+  rotation 0 0 1 0
+  size 18 11
+  tileSize 40 40
+}
+SolidBox {
+  translation 0.71 0.7 0
+  size 0.1 0.1 0.1
+}
+RobotDescription {
+  translation 0 1.4 0
+  rotation 1 0 0 -1.5707953071795862
+  controller "robot_webots_api"
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="socket">
+  <link
+    name="socket_des">
+    <inertial>
+      <origin
+        xyz="0.56554 9.76960564791985E-18 -0.018641"
+        rpy="0 0 0" />
+      <mass
+        value="8.4253" />
+      <inertia
+        ixx="0.03149"
+        ixy="2.4468617419202E-18"
+        ixz="-0.017948"
+        iyy="0.80963"
+        iyz="-7.37400739300285E-18"
+        izz="0.80556" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://socket_des/meshes/socket_des.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+        <texture
+          filename="package://socket_des/textures/" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5707963267949 0 0" />
+      <geometry>
+        <mesh
+          filename="package://socket_des/meshes/socket_des.STL" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

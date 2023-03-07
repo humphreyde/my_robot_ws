@@ -1,0 +1,21 @@
+port: /dev/ttyUSB0
+baud: 1000000
+rate: 100
+sync_write: True
+sync_read: False
+read_rate: 20
+write_rate: 20
+
+joints: {
+    joint1: {id: 1, invert: False},
+    joint2: {id: 2, invert: False},
+    joint3: {id: 3, invert: False},
+    joint4: {id: 4, invert: False},
+    joint5: {id: 5, invert: False},
+    joint6: {id: 6, invert: False},
+    joint7: {id: 7, invert: False},
+}
+
+controllers: {
+   arm_controller: {onboard: False, action_name: arm_controller/follow_joint_trajectory, type: follow_controller, joints: ["joint1","joint2","joint3","joint4","joint5","joint6","joint7"]},
+  }

@@ -1,0 +1,385 @@
+#VRML_SIM R2022b utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the MoonCar1
+# Extracted from: /home/robot/catkin_ws/src/moon_car1/urdf/moon_car1.urdf
+
+PROTO MoonCar1 [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "MoonCar1"  # Is `Robot.name`.
+  field  SFString    controller      "void"      # Is `Robot.controller`.
+  field  MFString    controllerArgs  []          # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""          # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE       # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE        # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE       # Is `Robot.selfCollision`.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      Shape {
+        appearance DEF base_link_material PBRAppearance {
+          baseColor 0.752941 0.752941 0.752941
+          roughness 1.000000
+          metalness 0
+        }
+        geometry DEF base_link Mesh {
+          url "/home/hp/robot_ws/src/moon_car1/meshes/base_link.STL"
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000007 -1.000000 0.000004
+          anchor -0.312380 1.280200 -0.341820
+        }
+        device [
+          RotationalMotor {
+            name "left_wheel_j1"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "left_wheel_j1_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.312380 1.280200 -0.341820
+          rotation -0.000003 0.707108 0.707105 3.141598
+          children [
+            Shape {
+              appearance DEF left_wheel_1_material PBRAppearance {
+                baseColor 0.752940 0.752940 0.752940
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF left_wheel_1 Mesh {
+                url "/home/hp/robot_ws/src/moon_car1/meshes/left_wheel_1.STL"
+              }
+            }
+          ]
+          name "left_wheel_1"
+          boundingObject USE left_wheel_1
+          physics Physics {
+            density -1
+            mass 44.781000
+            centerOfMass [ 0.000000 0.000000 -0.002558 ]
+            inertiaMatrix [
+              2.728300e+00 2.728300e+00 5.260500e+00
+              1.112900e-13 -6.182500e-07 -2.226600e-07
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000007 -1.000000 0.000004
+          anchor -1.847600 1.280200 -0.341820
+        }
+        device [
+          RotationalMotor {
+            name "left_wheel_j2"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "left_wheel_j2_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -1.847600 1.280200 -0.341820
+          rotation -0.000003 0.707108 0.707105 3.141598
+          children [
+            Shape {
+              appearance DEF left_wheel_2_material PBRAppearance {
+                baseColor 0.752940 0.752940 0.752940
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF left_wheel_2 Mesh {
+                url "/home/hp/robot_ws/src/moon_car1/meshes/left_wheel_2.STL"
+              }
+            }
+          ]
+          name "left_wheel_2"
+          boundingObject USE left_wheel_2
+          physics Physics {
+            density -1
+            mass 44.779000
+            centerOfMass [ -0.000000 -0.000000 -0.002554 ]
+            inertiaMatrix [
+              2.728300e+00 2.728300e+00 5.260500e+00
+              3.001200e-14 7.970600e-08 6.137000e-07
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis -0.000007 1.000000 -0.000004
+          anchor -0.312380 -1.280200 -0.341820
+        }
+        device [
+          RotationalMotor {
+            name "right_wheel_j1"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "right_wheel_j1_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.312380 -1.280200 -0.341820
+          rotation -0.000003 0.707108 0.707105 3.141598
+          children [
+            Shape {
+              appearance DEF right_wheel_1_material PBRAppearance {
+                baseColor 0.752940 0.752940 0.752940
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF right_wheel_1 Mesh {
+                url "/home/hp/robot_ws/src/moon_car1/meshes/right_wheel_1.STL"
+              }
+            }
+          ]
+          name "right_wheel_1"
+          boundingObject USE right_wheel_1
+          physics Physics {
+            density -1
+            mass 44.780000
+            centerOfMass [ -0.000000 0.000000 0.002557 ]
+            inertiaMatrix [
+              2.728300e+00 2.728300e+00 5.260500e+00
+              -1.814500e-13 -5.532800e-07 3.196900e-07
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis -0.000007 1.000000 -0.000004
+          anchor -1.847600 -1.280200 -0.341820
+        }
+        device [
+          RotationalMotor {
+            name "right_wheel_j2"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "right_wheel_j2_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -1.847600 -1.280200 -0.341820
+          rotation -0.000003 0.707108 0.707105 3.141598
+          children [
+            Shape {
+              appearance DEF right_wheel_2_material PBRAppearance {
+                baseColor 0.752940 0.752940 0.752940
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF right_wheel_2 Mesh {
+                url "/home/hp/robot_ws/src/moon_car1/meshes/right_wheel_2.STL"
+              }
+            }
+          ]
+          name "right_wheel_2"
+          boundingObject USE right_wheel_2
+          physics Physics {
+            density -1
+            mass 44.777000
+            centerOfMass [ 0.000000 -0.000000 0.002551 ]
+            inertiaMatrix [
+              2.728300e+00 2.728300e+00 5.260400e+00
+              -1.323600e-13 5.172500e-07 -3.679800e-07
+            ]
+          }
+        }
+      }
+      SliderJoint {
+        jointParameters JointParameters {
+          axis 0.000000 0.000000 1.000000
+        }
+        device [
+          LinearMotor {
+            name "up_down_j1"
+            maxForce 10000
+          }
+          PositionSensor {
+            name "up_down_j1_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -1.571200 -0.200000 0.000000
+          rotation -0.000000 0.000000 1.000000 3.141600
+          children [
+            Shape {
+              appearance DEF up_down_1_material PBRAppearance {
+                baseColor 0.792160 0.819610 0.933330
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF up_down_1 Mesh {
+                url "/home/hp/robot_ws/src/moon_car1/meshes/up_down_1.STL"
+              }
+            }
+          ]
+          name "up_down_1"
+          boundingObject USE up_down_1
+          physics Physics {
+            density -1
+            mass 19.423000
+            centerOfMass [ 0.371440 -0.200000 0.392840 ]
+            inertiaMatrix [
+              7.486100e+00 5.783900e+00 5.471300e+00
+              6.333100e-10 6.117800e-01 -9.867000e-09
+            ]
+          }
+        }
+      }
+      SliderJoint {
+        jointParameters JointParameters {
+          axis 0.000000 0.000000 1.000000
+        }
+        device [
+          LinearMotor {
+            name "up_down_j2"
+            maxForce 10000
+          }
+          PositionSensor {
+            name "up_down_j2_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -1.571200 -0.200000 0.000000
+          rotation -0.000000 0.000000 1.000000 3.141600
+          children [
+            Shape {
+              appearance DEF up_down_2_material PBRAppearance {
+                baseColor 0.792160 0.819610 0.933330
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF up_down_2 Mesh {
+                url "/home/hp/robot_ws/src/moon_car1/meshes/up_down_2.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis -0.000000 0.000007 -1.000000
+                anchor 0.651200 0.320700 -0.143540
+              }
+              device [
+                RotationalMotor {
+                  name "up_down_rev_j1"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "up_down_rev_j1_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.651200 0.320700 -0.143540
+                rotation 0.000004 -1.000000 -0.000004 3.141593
+                children [
+                  Shape {
+                    appearance DEF up_down_rev_1_material PBRAppearance {
+                      baseColor 0.792160 0.819610 0.933330
+                      roughness 1.000000
+                      metalness 0
+                    }
+                    geometry DEF up_down_rev_1 Mesh {
+                      url "/home/hp/robot_ws/src/moon_car1/meshes/up_down_rev_1.STL"
+                    }
+                  }
+                ]
+                name "up_down_rev_1"
+                boundingObject USE up_down_rev_1
+                physics Physics {
+                  density -1
+                  mass 4.337700
+                  centerOfMass [ -0.090195 0.183780 -0.754900 ]
+                  inertiaMatrix [
+                    1.046700e-01 2.467900e-02 1.275400e-01
+                    9.161800e-03 -3.455600e-17 4.613900e-17
+                  ]
+                }
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 0.000000 -1.000000
+                anchor 0.651200 -0.720700 -0.143540
+              }
+              device [
+                RotationalMotor {
+                  name "up_down_rev_j2"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "up_down_rev_j2_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.651200 -0.720700 -0.143540
+                children [
+                  Shape {
+                    appearance DEF up_down_rev_2_material PBRAppearance {
+                      baseColor 0.792160 0.819610 0.933330
+                      roughness 1.000000
+                      metalness 0
+                    }
+                    geometry DEF up_down_rev_2 Mesh {
+                      url "/home/hp/robot_ws/src/moon_car1/meshes/up_down_rev_2.STL"
+                    }
+                  }
+                ]
+                name "up_down_rev_2"
+                boundingObject USE up_down_rev_2
+                physics Physics {
+                  density -1
+                  mass 4.333200
+                  centerOfMass [ 0.089962 -0.183820 0.754900 ]
+                  inertiaMatrix [
+                    1.046600e-01 2.445300e-02 1.273000e-01
+                    9.201500e-03 -1.185200e-17 -1.111700e-17
+                  ]
+                }
+              }
+            }
+          ]
+          name "up_down_2"
+          boundingObject USE up_down_2
+          physics Physics {
+            density -1
+            mass 6.897300
+            centerOfMass [ 0.074605 -0.200000 0.611360 ]
+            inertiaMatrix [
+              4.410800e-01 5.070100e-02 4.889300e-01
+              -2.232900e-16 1.295000e-18 -7.223500e-17
+            ]
+          }
+        }
+      }
+    ]
+    name IS name
+    boundingObject USE base_link
+    physics Physics {
+      density -1
+      mass 1530.070766
+      centerOfMass [ -0.846440 0.003828 -0.004142 ]
+      inertiaMatrix [
+        6.818836e+02 7.492353e+02 1.335807e+03
+        -8.536433e-01 -9.504754e+01 -6.969306e-01
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.29260392112488054 0.9321310044507003 0.21334182872581084 1.3275877810449275
+  position 3.7229560185462933 2.5471675426460836 1.210876839382331
+}
+TexturedBackground {
+}
+DirectionalLight {
+  ambientIntensity 1
+  direction 0.8 -1 -0.55
+  intensity 2.7
+}
+Floor {
+  size 18 11
+}
+AddGasRobotDescription3 {
+  controller "robot_webots_api"
+}
+Robot {
+  translation 0.51 0.95 2.13166e-07
+  rotation 0.5773509358560258 -0.577349935856137 -0.577349935856137 2.09439
+  children [
+    Transform {
+      translation 0.1 0 0.01
+      rotation -1 0 0 -1.5707953071795862
+      children [
+        Shape {
+          appearance Appearance {
+            texture ImageTexture {
+              url [
+                "/home/hp/robot_ws/src/520.png"
+              ]
+            }
+          }
+          geometry Plane {
+            size 0.1 0.1
+          }
+        }
+      ]
+    }
+    Transform {
+      translation -1.73954e-06 0.41 0.41
+      rotation 0.6785941691959412 0.6786031691981851 -0.28108307008329386 2.59356
+      children [
+        Shape {
+          geometry Cylinder {
+            height 0.1
+            radius 0.05
+          }
+        }
+        Camera {
+          rotation -1 1.32679e-06 4.7949e-09 3.14159
+          width 640
+          height 640
+        }
+      ]
+    }
+    Transform {
+      translation 0 1.03462e-15 5.34295e-16
+      rotation 1 0 0 1.570796
+      children [
+        Shape {
+          appearance DEF socket_des_material PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "/home/hp/robot_ws/src/robot_description/socket_des/textures/"
+              ]
+            }
+            roughness 1
+            metalness 0
+          }
+          geometry DEF socket_des Mesh {
+            url [
+              "/home/hp/robot_ws/src/robot_description/socket_des/meshes/socket_des.STL"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+  name "Socket"
+  boundingObject Transform {
+    translation 0 -6.5359e-09 -0.02
+    rotation 1 0 0 1.570796
+    children [
+      USE socket_des
+    ]
+  }
+  physics Physics {
+    density -1
+    mass 8.4253
+    centerOfMass [
+      0.56554 0 -0.018641
+    ]
+    inertiaMatrix [
+      0.03149 0.80963 0.80556
+      2.446862e-18 -0.017948 -7.374007e-18
+    ]
+  }
+  controller "camera"
+}

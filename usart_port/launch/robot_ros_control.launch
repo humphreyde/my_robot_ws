@@ -1,0 +1,10 @@
+<launch>    
+  <param name="robot_description"    textfile="$(find add_gas_robot_description2)/urdf/add_gas_robot_description2.urdf" />
+
+  <node name="robot_hardware_interface" pkg="usart_port" type="robot_hardware_interface" output="screen"/>
+  
+  <rosparam file="$(find usart_port)/config/robot_control.yaml" command="load"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="/robot_position_controller/joint_position_controller "/>
+</launch>
+

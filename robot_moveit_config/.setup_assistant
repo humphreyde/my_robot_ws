@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: add_gas_robot_description2
+    relative_path: urdf/add_gas_robot_description2.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/add_gas_robot_description2.srdf
+  CONFIG:
+    author_name: hum
+    author_email: hum_hp@163.com
+    generated_timestamp: 1678069107
