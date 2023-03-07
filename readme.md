@@ -1,2 +1,2 @@
-这是robot与ros配置的工作空间的src
+这是robot与ros配置的工作空间
 
