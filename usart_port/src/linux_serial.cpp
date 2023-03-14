@@ -99,6 +99,7 @@ void  writePosition(float joint1_position, float joint2_position,float joint3_po
 ********************************************************/
 bool readPosition(float *p_joint_pos_now,unsigned char *ctrlFlag)
 {
+    
     char i, length = 0;
     unsigned char checkSum;
     unsigned char usart_rx_buff[150]={0};
@@ -117,7 +118,7 @@ bool readPosition(float *p_joint_pos_now,unsigned char *ctrlFlag)
         ROS_INFO("read_until error");
     } 
     //=========================================================        
-
+    
     // 检查信息头
     if (usart_rx_buff[0]!= header[0] || usart_rx_buff[1] != header[1])   //buf[0] buf[1]
     {
@@ -138,6 +139,7 @@ bool readPosition(float *p_joint_pos_now,unsigned char *ctrlFlag)
     // 读取
      for(i = 0; i < 4; i++)
 					{
+                        
 						joint1_pos_now.byte[i]  = usart_rx_buff[i + 3]; //buf[3]  buf[4] 5 6 
 						joint2_pos_now.byte[i]  = usart_rx_buff[i+ 7]; //buf[7]  buf[6] 9 10
 						joint3_pos_now.byte[i]  = usart_rx_buff[i + 11];
@@ -149,7 +151,7 @@ bool readPosition(float *p_joint_pos_now,unsigned char *ctrlFlag)
 
     // 读取控制标志位
     *ctrlFlag = usart_rx_buff[9];
-    
+
     p_joint_pos_now[0]  = (float)joint1_pos_now.f_data;
     p_joint_pos_now[1]  = (float)joint2_pos_now.f_data;
     p_joint_pos_now[2]  = (float)joint3_pos_now.f_data;
@@ -157,8 +159,11 @@ bool readPosition(float *p_joint_pos_now,unsigned char *ctrlFlag)
    p_joint_pos_now[4]   = (float)joint5_pos_now.f_data;
    p_joint_pos_now[5]  = (float)joint6_pos_now.f_data;
    p_joint_pos_now[6]  = (float)joint7_pos_now.f_data;
-
-    return true;
+    // for(int j = 0;   j<36;    j++)
+    // {
+    //     ROS_INFO("%u\n",usart_rx_buff[j]&0xff);
+    // }
+    // return true;
 }
 /********************************************************
 函数功能：获得8位循环冗余校验值

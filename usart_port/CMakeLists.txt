@@ -41,7 +41,7 @@ include_directories(
   include
   include ${catkin_INCLUDE_DIRS}
   $ENV{HOME}/robot_ws/devel/include
-  $ENV{HOME}/baxter_ws/devel/include
+
   ${catkin_INCLUDE_DIRS}
 )
 

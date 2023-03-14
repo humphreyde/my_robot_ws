@@ -11,12 +11,12 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
   actionlib
-  arbotix_msgs
+  #arbotix_msgs
   control_msgs
 )
 include_directories(
   include ${catkin_INCLUDE_DIRS}
-  $ENV{HOME}/baxter_ws/devel/include
+  #$ENV{HOME}/baxter_ws/devel/include
   include 
   $ENV{HOME}/robot_ws/devel/include
   ${catkin_INCLUDE_DIRS} 

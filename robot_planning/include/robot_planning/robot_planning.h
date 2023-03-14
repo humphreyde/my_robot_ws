@@ -16,7 +16,7 @@
 
 #include "baxter_core_msgs/JointCommand.h"
 #include <gazebo_msgs/LinkState.h>
-#include <octomap/octomap.h>
+//#include <octomap/octomap.h>
 #include <control_msgs/JointControllerState.h>
 #include <tf/transform_listener.h>
 
